@@ -1,7 +1,6 @@
 /- Copyright (c) Heather Macbeth, 2022.  All rights reserved. -/
 
-import tactics.algebra
-import tactics.small_nums
+import tactic
 import tactics.push_neg
 import data.int.parity
 

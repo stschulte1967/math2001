@@ -1,8 +1,7 @@
 /- Copyright (c) Heather Macbeth, 2022.  All rights reserved. -/
 
 import data.real.basic
-import tactics.algebra
-import tactics.small_nums
+import tactic
 
 /-! # Lean hw 1
 

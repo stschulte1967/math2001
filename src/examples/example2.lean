@@ -1,8 +1,7 @@
 /- Copyright (c) Heather Macbeth, 2022.  All rights reserved. -/
 
 import data.int.parity
-import tactics.algebra
-import tactics.small_nums
+import tactic
 
 /-! # Lean lab 2
 
@@ -20,7 +19,7 @@ begin
   dsimp [odd] at *,
   cases hn with k hk,
   use 3 * k + 2,
-  calc 3 * n + 2 = 3 * (2 * k + 1) + 2 : by substitute [hk]
+  calc 3 * n + 2 = 3 * (2 * k + 1) + 2 : by rwa [hk]
   ... = 2 * (3 * k + 2) + 1 : by ring
 end
 
@@ -29,7 +28,7 @@ begin
   dsimp [odd] at *,
   cases hn with k hk,
   use 7 * k + 1,
-  calc 7 * n - 4 = 7 * (2 * k + 1) - 4 : by substitute [hk]
+  calc 7 * n - 4 = 7 * (2 * k + 1) - 4 : by rwa [hk]
   ... = 2 * (7 * k + 1) + 1 : by ring
 end
 
@@ -48,7 +47,7 @@ begin
   dsimp [(∣)] at *,
   cases hab with k hk,
   use k * (a * k + 2),
-  calc b ^ 2 + 2 * b = (a * k) ^ 2 + 2 * (a * k) : by substitute [hk]
+  calc b ^ 2 + 2 * b = (a * k) ^ 2 + 2 * (a * k) : by rwa [hk]
   ... = a * (k * (a * k + 2)) : by ring 
 end
 
@@ -69,13 +68,13 @@ begin
   { rw [even] at *,
     cases hm with k hk,
     use k * n,
-    calc m * n = (2 * k) * n : by substitute [hk]
-    ... =  2 * (k * n) : by ring },
+    calc m * n = (2 * k) * n : by rwa [hk]
+    ... = 2 * (k * n) : by ring },
   { rw hmn at hm,
     rw [even] at *,
     cases hm with k hk,
     use k * m,
-    calc m * n = m * (2 * k) : by substitute [hk]
+    calc m * n = m * (2 * k) : by rwa [hk]
     ... =  2 * (k * m) : by ring },
 end
 

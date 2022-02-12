@@ -2,8 +2,7 @@
 
 import data.int.parity
 import data.real.basic
-import tactics.algebra
-import tactics.small_nums
+import tactic
 
 /-! # Lean hw 2 -/
 
